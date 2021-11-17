@@ -22,7 +22,7 @@ UserSchema.modify = (data) => {
 }
 
 UserSchema.pre("save", function () {
-    this.constructor.modify(data)
+    this.constructor.modify(this.poll)
 })
 
 module.exports = mongoose.model("User", UserSchema)
